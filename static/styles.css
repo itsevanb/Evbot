@@ -60,11 +60,13 @@ body {
 }
 
 .message {
+    position: relative;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
+    width: 100%;
 }
 
 .message i {
@@ -75,7 +77,18 @@ body {
     margin: 0;
 }
 
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 .bot-message {
+    animation: slideIn 0.5s ease-in-out;
     background-color: #007BFF;
     color: black;
     align-self: flex-start;
@@ -86,4 +99,10 @@ body {
     color: black;
     border: 1px solid #d3d3d3;
     align-self: flex-end;
+}
+
+.timestamp {
+    position: absolute;
+    right: 0px;
+    margin-right: 10px;
 }
