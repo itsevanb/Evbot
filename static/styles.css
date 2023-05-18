@@ -67,6 +67,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     width: 100%;
+    justify-content: space-between;
 }
 
 .message i {
@@ -102,7 +103,5 @@ body {
 }
 
 .timestamp {
-    position: absolute;
-    right: 0px;
-    margin-right: 10px;
+    white-space: nowrap;
 }
