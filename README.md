@@ -1,6 +1,6 @@
 # Smarter-Chatbot
  ChatGPT API4 will be used 
-
+pushed to replit feel to try at: https://evbot.itsevanb26.repl.co/
 My ChatBot
 This project is a web-based chatbot powered by OpenAI's GPT-4 model. It's built using Flask for the backend and uses JavaScript/jQuery for handling the frontend and AJAX requests.
 
