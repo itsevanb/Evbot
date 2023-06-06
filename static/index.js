@@ -36,9 +36,6 @@ $(document).ready(function() {
         // Send the user's message to the Flask backend
         $.get('/get', {msg: user_input})
             .done(function(data) {
-                // Remove the bot is typing message
-                botTyping.remove();
-
                 var timestamp = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: true});  // Get the current time
 
                 // Add the bot's response to the chatbox
@@ -48,11 +45,12 @@ $(document).ready(function() {
                 $('#chatbox').scrollTop($('#chatbox')[0].scrollHeight);
             })
             .fail(function() {
+                // Handle error here
+                $('<div class="message bot-message"><i class="fas fa-robot"></i> Bot: Oops, I seem to be having trouble understanding. Could you try rephrasing your question?<span class="timestamp">' + timestamp + '</span></div>').appendTo('#chatbox');
+            })
+            .always(function() {
                 // Remove the bot is typing message
                 botTyping.remove();
-
-                // Handle error here
-                $('<div class="message bot-message"><i class="fas fa-robot"></i> Bot: I\'m sorry, there was an error processing your request.</div>').appendTo('#chatbox');
             });
     }
 });
